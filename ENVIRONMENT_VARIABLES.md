@@ -77,3 +77,28 @@ Para monitorar a saúde do banco em produção:
 - Logs na Vercel Dashboard
 - Métricas de conexão no Neon.tech
 - Alerts automáticos configurados
+
+---
+
+## 🔧 Configuração para Deploy na Netlify (Neon)
+
+### Variáveis Obrigatórias (definir no painel da Netlify)
+
+```env
+DATABASE_URL=postgresql://neondb_owner:npg_2g4LEsQvxnBw@ep-nameless-surf-ael4tvdb-pooler.c-2.us-east-2.aws.neon.tech/neondb?channel_binding=require&sslmode=require
+SESSION_SECRET=defina-uma-chave-forte-aqui
+NODE_ENV=production
+```
+
+### Passo a passo na Netlify
+1. Acesse Site → Site configuration → Environment variables
+2. Adicione as variáveis acima (use um `SESSION_SECRET` forte)
+3. Faça um novo deploy
+
+### Detalhes do Banco Neon (projeto criado)
+- Project ID: `silent-surf-92256988`
+- Branch: `main` (ID original: `br-fancy-cherry-aendu9wg`)
+- Connection URI (owner):
+  `postgresql://neondb_owner:npg_2g4LEsQvxnBw@ep-nameless-surf-ael4tvdb-pooler.c-2.us-east-2.aws.neon.tech/neondb?channel_binding=require&sslmode=require`
+
+> Observação: Troque `SESSION_SECRET` por uma chave segura e, se necessário, gere um usuário/role de produção com permissões restritas no Neon.
