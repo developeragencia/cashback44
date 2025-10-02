@@ -96,3 +96,6 @@ temp/
 # Vercel
 .vercel
 .git.backup.*
+
+# Local Netlify folder
+.netlify
