@@ -3,28 +3,25 @@
   "name": "vale-cashback-pro",
   "builds": [
     {
-      "src": "server/index.ts",
+      "src": "dist/index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["server/**", "shared/**", "client/dist/**"]
+        "includeFiles": ["dist/public/**", "shared/**"]
       }
     },
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "src": "dist/public/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/index.ts"
+      "dest": "/dist/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/client/dist/$1"
+      "dest": "/dist/public/$1"
     }
   ],
   "env": {
