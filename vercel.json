@@ -28,5 +28,5 @@
     "NODE_ENV": "production",
     "DATABASE_URL": "@database_url",
     "SESSION_SECRET": "@session_secret"
-  },
+  }
 }
